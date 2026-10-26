@@ -4,3 +4,9 @@ U -- untracked
 A -- added or staged
 C -- commited
 M -- modified track
+
+
+when we make a folder , git does not know any thing about that
+folder . isliye main waha pe git ko initialize karta hu 
+git know about my folder and it can do some task onthis folder
+now we here can track , modified , safed checkpoint create kar sakte hai 
