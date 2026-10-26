@@ -1,2 +1,6 @@
 1.first
-2.second
+stages:
+U -- untracked
+A -- added or staged
+C -- commited
+M -- modified track
