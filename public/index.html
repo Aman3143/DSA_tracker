@@ -7,743 +7,1164 @@
   <title>DSA Placement Tracker</title>
   <style>
     :root {
-      --bg: #f5f7fb;
-      --panel: #fff;
-      --text: #172033;
-      --muted: #68738a;
-      --line: #e4e9f2;
-      --accent: #6558e8;
-      --accent2: #8b5cf6;
-      --soft: #eeecff;
-      --green: #138a58;
-      --red: #d64b5b;
-      --shadow: 0 10px 30px rgba(28, 37, 70, .07)
+      --bg:
+        #f5f7fb;
+      --panel:
+        #fff;
+      --text:
+        #172033;
+      --muted:
+        #68738a;
+      --line:
+        #e4e9f2;
+      --accent:
+        #6558e8;
+      --accent2:
+        #8b5cf6;
+      --soft:
+        #eeecff;
+      --green:
+        #138a58;
+      --red:
+        #d64b5b;
+      --shadow:
+        0 10px 30px rgba(28,
+          37,
+          70,
+          .07)
     }
 
     [data-theme="dark"] {
-      --bg: #101421;
-      --panel: #191f30;
-      --text: #eef2ff;
-      --muted: #a4aec4;
-      --line: #2d354a;
-      --accent: #a69bff;
-      --accent2: #8b7cff;
-      --soft: #302b50;
-      --green: #55d6a0;
-      --red: #ff8290;
-      --shadow: 0 10px 30px rgba(0, 0, 0, .18)
+      --bg:
+        #101421;
+      --panel:
+        #191f30;
+      --text:
+        #eef2ff;
+      --muted:
+        #a4aec4;
+      --line:
+        #2d354a;
+      --accent:
+        #a69bff;
+      --accent2:
+        #8b7cff;
+      --soft:
+        #302b50;
+      --green:
+        #55d6a0;
+      --red:
+        #ff8290;
+      --shadow:
+        0 10px 30px rgba(0,
+          0,
+          0,
+          .18)
     }
 
     * {
-      box-sizing: border-box
+      box-sizing:
+        border-box
     }
 
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 15px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      transition: background .2s, color .2s
+      margin:
+        0;
+      background:
+        var(--bg);
+      color:
+        var(--text);
+      font:
+        15px/1.5 Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Arial;
+      transition:
+        background .2s,
+        color .2s
     }
 
     button,
     input,
     select,
     textarea {
-      font: inherit
+      font:
+        inherit
     }
 
     button,
     a {
-      transition: .18s
+      transition:
+        .18s
     }
 
     a {
-      color: var(--accent);
-      text-decoration: none
+      color:
+        var(--accent);
+      text-decoration:
+        none
     }
 
     a:hover {
-      text-decoration: underline
+      text-decoration:
+        underline
     }
 
     .app {
-      max-width: 1450px;
-      margin: auto;
-      padding: 24px
+      max-width:
+        1450px;
+      margin:
+        auto;
+      padding:
+        24px
     }
 
     .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px
+      display:
+        flex;
+      align-items:
+        center;
+      justify-content:
+        space-between;
+      gap:
+        16px;
+      margin-bottom:
+        24px
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px
+      display:
+        flex;
+      align-items:
+        center;
+      gap:
+        12px
     }
 
     .logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 15px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 23px;
-      font-weight: 800;
-      box-shadow: var(--shadow)
+      width:
+        48px;
+      height:
+        48px;
+      border-radius:
+        15px;
+      background:
+        linear-gradient(135deg,
+          var(--accent),
+          var(--accent2));
+      display:
+        grid;
+      place-items:
+        center;
+      color:
+        white;
+      font-size:
+        23px;
+      font-weight:
+        800;
+      box-shadow:
+        var(--shadow)
     }
 
     h1,
     h2,
     h3,
     p {
-      margin-top: 0
+      margin-top:
+        0
     }
 
     h1 {
-      font-size: clamp(23px, 3vw, 32px);
-      margin-bottom: 2px;
-      letter-spacing: -.8px
+      font-size:
+        clamp(23px,
+          3vw,
+          32px);
+      margin-bottom:
+        2px;
+      letter-spacing:
+        -.8px
     }
 
     .sub {
-      color: var(--muted);
-      margin: 0
+      color:
+        var(--muted);
+      margin:
+        0
     }
 
     .actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap
+      display:
+        flex;
+      gap:
+        8px;
+      flex-wrap:
+        wrap
     }
 
     .btn {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      color: var(--text);
-      padding: 10px 13px;
-      border-radius: 11px;
-      cursor: pointer;
-      font-weight: 650
+      border:
+        1px solid var(--line);
+      background:
+        var(--panel);
+      color:
+        var(--text);
+      padding:
+        10px 13px;
+      border-radius:
+        11px;
+      cursor:
+        pointer;
+      font-weight:
+        650
     }
 
     .btn:hover {
-      transform: translateY(-1px);
-      border-color: var(--accent)
+      transform:
+        translateY(-1px);
+      border-color:
+        var(--accent)
     }
 
     .btn.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent)
+      background:
+        var(--accent);
+      color:
+        white;
+      border-color:
+        var(--accent)
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 18px;
-      margin-bottom: 18px
+      display:
+        grid;
+      grid-template-columns:
+        1.5fr 1fr;
+      gap:
+        18px;
+      margin-bottom:
+        18px
     }
 
     .hero-card,
     .panel,
     .stat {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 19px;
-      box-shadow: var(--shadow)
+      background:
+        var(--panel);
+      border:
+        1px solid var(--line);
+      border-radius:
+        19px;
+      box-shadow:
+        var(--shadow)
     }
 
     .hero-card {
-      padding: 24px;
-      position: relative;
-      overflow: hidden
+      padding:
+        24px;
+      position:
+        relative;
+      overflow:
+        hidden
     }
 
     .hero-card:after {
-      content: "";
-      position: absolute;
-      width: 230px;
-      height: 230px;
-      border-radius: 50%;
-      background: var(--soft);
-      right: -80px;
-      top: -100px;
-      opacity: .8
+      content:
+        "";
+      position:
+        absolute;
+      width:
+        230px;
+      height:
+        230px;
+      border-radius:
+        50%;
+      background:
+        var(--soft);
+      right:
+        -80px;
+      top:
+        -100px;
+      opacity:
+        .8
     }
 
     .hero-card>* {
-      position: relative;
-      z-index: 1
+      position:
+        relative;
+      z-index:
+        1
     }
 
     .eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent);
-      font-weight: 800
+      font-size:
+        12px;
+      text-transform:
+        uppercase;
+      letter-spacing:
+        1.5px;
+      color:
+        var(--accent);
+      font-weight:
+        800
     }
 
     .hero-card h2 {
-      font-size: 24px;
-      margin: 8px 0
+      font-size:
+        24px;
+      margin:
+        8px 0
     }
 
     .hero-card p {
-      color: var(--muted);
-      max-width: 650px
+      color:
+        var(--muted);
+      max-width:
+        650px
     }
 
     .hero-buttons {
-      display: flex;
-      gap: 9px;
-      flex-wrap: wrap
+      display:
+        flex;
+      gap:
+        9px;
+      flex-wrap:
+        wrap
     }
 
     .goal-card {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px
+      padding:
+        22px;
+      display:
+        flex;
+      flex-direction:
+        column;
+      justify-content:
+        space-between;
+      gap:
+        18px
     }
 
     .goal-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between
+      display:
+        flex;
+      align-items:
+        center;
+      justify-content:
+        space-between
     }
 
     .goal-number {
-      font-size: 30px;
-      font-weight: 850;
-      letter-spacing: -1px
+      font-size:
+        30px;
+      font-weight:
+        850;
+      letter-spacing:
+        -1px
     }
 
     .muted {
-      color: var(--muted)
+      color:
+        var(--muted)
     }
 
     .progress-track {
-      height: 9px;
-      background: var(--line);
-      border-radius: 100px;
-      overflow: hidden
+      height:
+        9px;
+      background:
+        var(--line);
+      border-radius:
+        100px;
+      overflow:
+        hidden
     }
 
     .progress-fill {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 100px;
-      transition: width .3s
+      height:
+        100%;
+      width:
+        0;
+      background:
+        linear-gradient(90deg,
+          var(--accent),
+          var(--accent2));
+      border-radius:
+        100px;
+      transition:
+        width .3s
     }
 
     .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-bottom: 18px
+      display:
+        grid;
+      grid-template-columns:
+        repeat(4,
+          1fr);
+      gap:
+        14px;
+      margin-bottom:
+        18px
     }
 
     .stat {
-      padding: 18px
+      padding:
+        18px
     }
 
     .stat-label {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 650
+      color:
+        var(--muted);
+      font-size:
+        13px;
+      font-weight:
+        650
     }
 
     .stat-value {
-      font-size: 28px;
-      font-weight: 850;
-      letter-spacing: -.8px;
-      margin: 4px 0
+      font-size:
+        28px;
+      font-weight:
+        850;
+      letter-spacing:
+        -.8px;
+      margin:
+        4px 0
     }
 
     .stat-foot {
-      font-size: 12px;
-      color: var(--muted)
+      font-size:
+        12px;
+      color:
+        var(--muted)
     }
 
     .layout {
-      display: grid;
-      grid-template-columns: 310px minmax(0, 1fr);
-      gap: 18px;
-      align-items: start
+      display:
+        grid;
+      grid-template-columns:
+        310px minmax(0,
+          1fr);
+      gap:
+        18px;
+      align-items:
+        start
     }
 
     .panel {
-      padding: 19px
+      padding:
+        19px
     }
 
     .panel-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px
+      display:
+        flex;
+      justify-content:
+        space-between;
+      align-items:
+        center;
+      gap:
+        12px;
+      margin-bottom:
+        14px
     }
 
     .panel-title h2 {
-      font-size: 17px;
-      margin: 0
+      font-size:
+        17px;
+      margin:
+        0
     }
 
     .week-list {
-      display: grid;
-      gap: 8px
+      display:
+        grid;
+      gap:
+        8px
     }
 
     .week-btn {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      text-align: left;
-      padding: 12px;
-      border: 1px solid transparent;
-      border-radius: 12px;
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
-      width: 100%
+      display:
+        flex;
+      align-items:
+        center;
+      gap:
+        11px;
+      text-align:
+        left;
+      padding:
+        12px;
+      border:
+        1px solid transparent;
+      border-radius:
+        12px;
+      background:
+        transparent;
+      color:
+        var(--text);
+      cursor:
+        pointer;
+      width:
+        100%
     }
 
     .week-btn:hover {
-      background: var(--bg)
+      background:
+        var(--bg)
     }
 
     .week-btn.active {
-      background: var(--soft);
-      border-color: var(--accent);
-      color: var(--accent)
+      background:
+        var(--soft);
+      border-color:
+        var(--accent);
+      color:
+        var(--accent)
     }
 
     .week-num {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: var(--bg);
-      font-weight: 800;
-      flex-shrink: 0
+      width:
+        34px;
+      height:
+        34px;
+      border-radius:
+        10px;
+      display:
+        grid;
+      place-items:
+        center;
+      background:
+        var(--bg);
+      font-weight:
+        800;
+      flex-shrink:
+        0
     }
 
     .week-btn.active .week-num {
-      background: var(--accent);
-      color: white
+      background:
+        var(--accent);
+      color:
+        white
     }
 
     .week-info {
-      min-width: 0;
-      flex: 1
+      min-width:
+        0;
+      flex:
+        1
     }
 
     .week-name {
-      font-weight: 750;
-      font-size: 13px;
-      display: block
+      font-weight:
+        750;
+      font-size:
+        13px;
+      display:
+        block
     }
 
     .week-meta {
-      font-size: 11px;
-      color: var(--muted)
+      font-size:
+        11px;
+      color:
+        var(--muted)
     }
 
     .mini-track {
-      height: 4px;
-      background: var(--line);
-      border-radius: 9px;
-      margin-top: 5px;
-      overflow: hidden
+      height:
+        4px;
+      background:
+        var(--line);
+      border-radius:
+        9px;
+      margin-top:
+        5px;
+      overflow:
+        hidden
     }
 
     .mini-fill {
-      height: 100%;
-      background: var(--green);
-      width: 0
+      height:
+        100%;
+      background:
+        var(--green);
+      width:
+        0
     }
 
     .content {
-      min-width: 0
+      min-width:
+        0
     }
 
     .toolbar {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 14px
+      display:
+        flex;
+      justify-content:
+        space-between;
+      gap:
+        12px;
+      flex-wrap:
+        wrap;
+      align-items:
+        center;
+      margin-bottom:
+        14px
     }
 
     .toolbar h2 {
-      margin: 0;
-      font-size: 22px
+      margin:
+        0;
+      font-size:
+        22px
     }
 
     .filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap
+      display:
+        flex;
+      gap:
+        8px;
+      flex-wrap:
+        wrap
     }
 
     .field {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: var(--panel);
-      color: var(--text);
-      padding: 10px 11px;
-      min-width: 125px;
-      outline: none
+      border:
+        1px solid var(--line);
+      border-radius:
+        10px;
+      background:
+        var(--panel);
+      color:
+        var(--text);
+      padding:
+        10px 11px;
+      min-width:
+        125px;
+      outline:
+        none
     }
 
     .field:focus,
     textarea:focus {
-      border-color: var(--accent)
+      border-color:
+        var(--accent)
     }
 
     .day-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 13px
+      display:
+        grid;
+      grid-template-columns:
+        repeat(2,
+          minmax(0,
+            1fr));
+      gap:
+        13px
     }
 
     .day-card {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--panel);
-      padding: 17px;
-      min-width: 0
+      border:
+        1px solid var(--line);
+      border-radius:
+        16px;
+      background:
+        var(--panel);
+      padding:
+        17px;
+      min-width:
+        0
     }
 
     .day-card.done {
-      border-color: color-mix(in srgb, var(--green) 50%, var(--line));
-      background: color-mix(in srgb, var(--green) 4%, var(--panel))
+      border-color:
+        color-mix(in srgb,
+          var(--green) 50%,
+          var(--line));
+      background:
+        color-mix(in srgb,
+          var(--green) 4%,
+          var(--panel))
     }
 
     .day-head {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px
+      display:
+        flex;
+      align-items:
+        flex-start;
+      gap:
+        10px
     }
 
     .day-check {
-      width: 21px;
-      height: 21px;
-      accent-color: var(--green);
-      margin-top: 2px;
-      flex-shrink: 0;
-      cursor: pointer
+      width:
+        21px;
+      height:
+        21px;
+      accent-color:
+        var(--green);
+      margin-top:
+        2px;
+      flex-shrink:
+        0;
+      cursor:
+        pointer
     }
 
     .day-heading {
-      flex: 1;
-      min-width: 0
+      flex:
+        1;
+      min-width:
+        0
     }
 
     .day-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      font-weight: 800
+      font-size:
+        11px;
+      text-transform:
+        uppercase;
+      letter-spacing:
+        1px;
+      color:
+        var(--muted);
+      font-weight:
+        800
     }
 
     .day-card h3 {
-      font-size: 16px;
-      margin: 2px 0 6px
+      font-size:
+        16px;
+      margin:
+        2px 0 6px
     }
 
     .day-card p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 13px
+      font-size:
+        13px;
+      color:
+        var(--muted);
+      margin-bottom:
+        13px
     }
 
     .tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin: 8px 0 13px
+      display:
+        flex;
+      gap:
+        6px;
+      flex-wrap:
+        wrap;
+      margin:
+        8px 0 13px
     }
 
     .tag {
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 7px;
-      background: var(--bg);
-      color: var(--muted);
-      font-weight: 700
+      font-size:
+        11px;
+      padding:
+        4px 8px;
+      border-radius:
+        7px;
+      background:
+        var(--bg);
+      color:
+        var(--muted);
+      font-weight:
+        700
     }
 
     .tag.done-tag {
-      background: color-mix(in srgb, var(--green) 13%, var(--panel));
-      color: var(--green)
+      background:
+        color-mix(in srgb,
+          var(--green) 13%,
+          var(--panel));
+      color:
+        var(--green)
     }
 
     .day-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap
+      display:
+        flex;
+      gap:
+        8px;
+      flex-wrap:
+        wrap
     }
 
     .small-btn {
-      font-size: 12px;
-      padding: 7px 9px;
-      border-radius: 9px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      color: var(--text);
-      cursor: pointer;
-      font-weight: 700
+      font-size:
+        12px;
+      padding:
+        7px 9px;
+      border-radius:
+        9px;
+      border:
+        1px solid var(--line);
+      background:
+        var(--panel);
+      color:
+        var(--text);
+      cursor:
+        pointer;
+      font-weight:
+        700
     }
 
     .small-btn.link {
-      background: var(--soft);
-      border-color: transparent;
-      color: var(--accent)
+      background:
+        var(--soft);
+      border-color:
+        transparent;
+      color:
+        var(--accent)
     }
 
     .empty {
-      padding: 35px;
-      text-align: center;
-      color: var(--muted);
-      border: 1px dashed var(--line);
-      border-radius: 14px
+      padding:
+        35px;
+      text-align:
+        center;
+      color:
+        var(--muted);
+      border:
+        1px dashed var(--line);
+      border-radius:
+        14px
     }
 
     .side-stack {
-      display: grid;
-      gap: 18px
+      display:
+        grid;
+      gap:
+        18px
     }
 
     .input-label {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--muted);
-      display: block;
-      margin: 12px 0 6px
+      font-size:
+        12px;
+      font-weight:
+        800;
+      color:
+        var(--muted);
+      display:
+        block;
+      margin:
+        12px 0 6px
     }
 
     .full {
-      width: 100%
+      width:
+        100%
     }
 
     textarea {
-      resize: vertical;
-      min-height: 100px
+      resize:
+        vertical;
+      min-height:
+        100px
     }
 
     .focus-row {
-      display: flex;
-      align-items: center;
-      gap: 10px
+      display:
+        flex;
+      align-items:
+        center;
+      gap:
+        10px
     }
 
     .focus-row input {
-      width: 85px
+      width:
+        85px
     }
 
     .note-status {
-      font-size: 12px;
-      color: var(--green);
-      min-height: 18px;
-      margin-top: 6px
+      font-size:
+        12px;
+      color:
+        var(--green);
+      min-height:
+        18px;
+      margin-top:
+        6px
     }
 
     .habit-list {
-      display: grid;
-      gap: 10px
+      display:
+        grid;
+      gap:
+        10px
     }
 
     .habit {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 13px
+      display:
+        flex;
+      align-items:
+        center;
+      gap:
+        9px;
+      font-size:
+        13px
     }
 
     .habit input {
-      accent-color: var(--accent)
+      accent-color:
+        var(--accent)
     }
 
     .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 15px 0
+      height:
+        1px;
+      background:
+        var(--line);
+      margin:
+        15px 0
     }
 
     .footer {
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-      padding: 24px 0 8px
+      color:
+        var(--muted);
+      font-size:
+        12px;
+      text-align:
+        center;
+      padding:
+        24px 0 8px
     }
 
     .toast {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translate(-50%, 20px);
-      opacity: 0;
-      pointer-events: none;
-      background: var(--text);
-      color: var(--panel);
-      padding: 11px 16px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      transition: .25s;
-      z-index: 5
+      position:
+        fixed;
+      bottom:
+        20px;
+      left:
+        50%;
+      transform:
+        translate(-50%,
+          20px);
+      opacity:
+        0;
+      pointer-events:
+        none;
+      background:
+        var(--text);
+      color:
+        var(--panel);
+      padding:
+        11px 16px;
+      border-radius:
+        12px;
+      box-shadow:
+        var(--shadow);
+      transition:
+        .25s;
+      z-index:
+        5
     }
 
     .toast.show {
-      opacity: 1;
-      transform: translate(-50%, 0)
+      opacity:
+        1;
+      transform:
+        translate(-50%,
+          0)
     }
 
     .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: #090d19aa;
-      display: none;
-      place-items: center;
-      padding: 20px;
-      z-index: 10
+      position:
+        fixed;
+      inset:
+        0;
+      background:
+        #090d19aa;
+      display:
+        none;
+      place-items:
+        center;
+      padding:
+        20px;
+      z-index:
+        10
     }
 
     .modal-backdrop.open {
-      display: grid
+      display:
+        grid
     }
 
     .modal {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: var(--shadow)
+      background:
+        var(--panel);
+      border:
+        1px solid var(--line);
+      border-radius:
+        18px;
+      padding:
+        22px;
+      max-width:
+        500px;
+      width:
+        100%;
+      box-shadow:
+        var(--shadow)
     }
 
     .modal h2 {
-      font-size: 20px
+      font-size:
+        20px
     }
 
     .modal p {
-      color: var(--muted);
-      font-size: 13px
+      color:
+        var(--muted);
+      font-size:
+        13px
     }
 
     .modal-actions {
-      display: flex;
-      gap: 8px;
-      justify-content: flex-end;
-      margin-top: 15px
+      display:
+        flex;
+      gap:
+        8px;
+      justify-content:
+        flex-end;
+      margin-top:
+        15px
     }
 
     @media(max-width:1000px) {
       .layout {
-        grid-template-columns: 250px minmax(0, 1fr)
+        grid-template-columns:
+          250px minmax(0,
+            1fr)
       }
 
       .stats {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns:
+          repeat(2,
+            1fr)
       }
 
       .hero {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns:
+          1fr 1fr
       }
     }
 
     @media(max-width:760px) {
       .app {
-        padding: 14px
+        padding:
+          14px
       }
 
       .topbar {
-        align-items: flex-start
+        align-items:
+          flex-start
       }
 
       .hero {
-        grid-template-columns: 1fr
+        grid-template-columns:
+          1fr
       }
 
       .layout {
-        grid-template-columns: 1fr
+        grid-template-columns:
+          1fr
       }
 
       .week-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
+        grid-template-columns:
+          repeat(2,
+            minmax(0,
+              1fr))
       }
 
       .day-grid {
-        grid-template-columns: 1fr
+        grid-template-columns:
+          1fr
       }
 
       .brand .sub {
-        font-size: 12px
+        font-size:
+          12px
       }
 
       .actions .btn {
-        padding: 8px 10px;
-        font-size: 12px
+        padding:
+          8px 10px;
+        font-size:
+          12px
       }
 
       .panel {
-        padding: 14px
+        padding:
+          14px
       }
     }
 
     @media(max-width:430px) {
       .stats {
-        gap: 8px
+        gap:
+          8px
       }
 
       .stat {
-        padding: 13px
+        padding:
+          13px
       }
 
       .stat-value {
-        font-size: 23px
+        font-size:
+          23px
       }
 
       .week-list {
-        grid-template-columns: 1fr
+        grid-template-columns:
+          1fr
       }
 
       .topbar {
-        flex-direction: column
+        flex-direction:
+          column
       }
 
       .toolbar {
-        align-items: flex-start
+        align-items:
+          flex-start
       }
 
       .filters {
-        width: 100%
+        width:
+          100%
       }
 
       .filters .field {
-        flex: 1;
-        min-width: 0
+        flex:
+          1;
+        min-width:
+          0
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- This is a single-line comment 
+    -->
+  <!-- This is a single-line comment 
+    -->
+  <!-- This is a single-line comment 
+    -->
+  <!-- This is a single-line comment 
+    -->
+  <!-- This is a single-line comment 
+    -->
+  <!-- This is a single-line comment 
+    --> <!-- This is a single-line comment 
+    -->
+
   <div class="app">
     <header class="topbar">
       <div class="brand">
