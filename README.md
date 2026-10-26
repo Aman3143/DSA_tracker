@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DSA Placement Tracker — Full-stack version
 
 A single-user local web app for the 16-week C++ DSA plan. Includes the original tracker features plus an Express backend that persists progress in `data/progress.json`.
@@ -93,6 +92,3 @@ Invoke-RestMethod http://localhost:3000/api/state
 ```
 
 After a successful PUT, `data/progress.json` should contain the saved `completed.w0d0` entry.
-=======
-# DSA_tracker
->>>>>>> 049005fb27089f4c8c1affdc6b27fd0805a547cd
