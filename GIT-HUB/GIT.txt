@@ -5,8 +5,19 @@ A -- added or staged
 C -- commited
 M -- modified track
 
+git log -1 --format="%H" // to get link of commit of specific commit 
+ git push origin main // for All push of file 
 
 when we make a folder , git does not know any thing about that
 folder . isliye main waha pe git ko initialize karta hu 
 git know about my folder and it can do some task onthis folder
 now we here can track , modified , safed checkpoint create kar sakte hai 
+git can do some interesting thing like 
+--> we can check that which file are in which stage   ->  git status -s
+--> check kr skte ho aap kitne saved checkpoints hai   -> git log --oneline / --graph
+
+git status batata hai commit ke pahle and baad ki file stage
+git log batata hai saare commit histories
+git log ---> will all commit id
+
+
